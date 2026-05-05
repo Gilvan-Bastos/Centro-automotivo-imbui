@@ -30,7 +30,7 @@ header a { color: white; text-decoration: none; font-weight: 500; }
 .hero {
     /* Unificamos a imagem e a camada escura em uma única linha */
  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('../img/principal.jpg');
+                url('principal.jpg');
     
     background-size: cover;
     background-position: center;
