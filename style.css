@@ -1,0 +1,288 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Deixar o nome da oficina bem destacado */
+.logo {
+    font-weight: 900; /* Extra negrito */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+:root {
+    --primary: #0d2eeb; /* Vermelho Automotivo */
+    --dark: #1a1a1a;
+    --light: #0d2eeb;
+    --text: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+.container { max-width: 98%; margin: auto; padding: 0 10px; }
+
+header { background: var(--dark); color: rgb(197, 240, 7); padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+header nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.1rem; font-weight: bold; }
+.logo span { color: var(--primary); font-size: 1rem; } 
+header ul { display: flex; list-style: none; gap: 20px; }
+header a { color: white; text-decoration: none; font-weight: 500; }
+
+.hero {
+    /* Unificamos a imagem e a camada escura em uma única linha */
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../img/principal.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Ajustes de layout */
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Garante que o texto fique um embaixo do outro */
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Garante uma altura mínima para a imagem aparecer bem */
+}
+
+/* Ajuste fino nos textos para garantir contraste */
+.hero h1 {
+    font-size: 4em; /* Título grande e impactante */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra leve para destacar no fundo */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 700px; /* Limita a largura para facilitar a leitura */
+    margin: 0 auto 40px auto; /* Centraliza e dá espaço para o botão */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta { background: var(--primary); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+
+.servicos { padding: 80px 20px; text-align: center; }
+
+
+.grid-servicos {
+    display: grid !important; /* O !important garante que nenhuma outra regra sobrescreva esta */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 25px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px; /* Garante que todos tenham a mesma altura mínima */
+}
+
+.card { background: var(--light); padding: 30px; border-radius: 8px; border-bottom: 4px solid var(--primary); transition: 0.3s; }
+.card:hover { transform: translateY(-10px); }
+
+footer { background: var(--dark); color: white; padding: 40px 0; text-align: center; margin-top: 50px; }
+
+/* Estilo Missão, Visão e Valores */
+.institucional { padding: 60px 20px; background: #fff; }
+.grid-institucional { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+.item-mvv { 
+    padding: 40px; 
+    text-align: center; 
+    border: 1px solid #eee; 
+    border-radius: 10px; 
+}
+.item-mvv .icon { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+.item-mvv h3 { color: var(--primary); margin-bottom: 15px; text-transform: uppercase; }
+
+/* Seção de E-mail */
+.contato { text-align: center; padding: 80px 20px; }
+.btn-email { 
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.btn-email:hover { background: #333; }
+
+/* Botão WhatsApp Flutuante */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+.whatsapp-fixed img { width: 30px; height: 30px; }
+.whatsapp-fixed:hover { transform: scale(1.05); background-color: #128c7e; }
+
+/* Esconder o texto do zap em telas muito pequenas */
+@media (max-width: 480px) {
+    .whatsapp-fixed span { display: none; }
+    .whatsapp-fixed { padding: 15px; border-radius: 50%; }
+}
+
+#meu-formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#meu-formulario input, #meu-formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+#botao-enviar {
+    background-color: #1a1a1a; /* Cor escura do seu botão atual */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#botao-enviar:hover {
+    background-color: #333;
+}
+
+/* Centralização da seção Fale Conosco */
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 80px; /* Isso cria o espaço para a linha de baixo */
+}
+
+/* Ajuste da largura do formulário */
+#meu-formulario {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Reforça a centralização */
+}
+
+/* Espaçamento extra abaixo do texto de introdução */
+#contato p {
+    margin-bottom: 30px;
+}
+
+/* Estilo para o link do Instagram no menu */
+.instagram-link {
+    color: white; /* Amarelo para destaque */
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.instagram-link:hover {
+    color: #004aad; /* Azul ao passar o mouse */
+}
+
+/* Efeito para os demais links do menu */
+header a:hover {
+    color: #004aad; /* O mesmo azul que você usou no Instagram */
+    transition: 0.3s;
+}
+
+/* Estilo para o rodapé */
+.contato-oficina {
+    background-color: #000; /* Preto */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #004aad; /* Detalhe em Azul */
+}
+
+.google-link {
+    color: white; /* Amarelo para combinar com o Instagram */
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.google-link:hover {
+    color: #004aad; /* Azul no destaque */
+}
+
+/* Botão do Menu Superior (Mantém como está) */
+.btn-avalie {
+    background-color: #ffde59;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Botão do Rodapé (Correção de posicionamento) */
+.btn-google-footer {
+    display: inline-block; /* Faz o botão respeitar o texto ao redor */
+    background-color: #ffde59;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 15px 0; /* Cria espaço acima e abaixo do botão */
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse em ambos */
+.btn-avalie:hover, .btn-google-footer:hover {
+    background-color: #004aad;
+    color: #fff;
+}
+
+.card h3 {
+    margin-bottom: 7px;
+}
+
+#quem-somos {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Ou uma cor que contraste com o fundo escuro do hero */
+}
+
+.texto-institucional h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #000; /* Cor escura para o título */
+}
+
+.texto-institucional p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.1rem;
+}
